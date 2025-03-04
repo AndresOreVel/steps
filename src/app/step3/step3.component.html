@@ -1,0 +1,29 @@
+<div class="head">
+    <h2>Pick add-ons</h2>
+    <p>Add-ons help to enhance your gaming experience.</p>
+</div>
+<div class="addons-selection">
+    <div *ngFor="let addon of modalComponent.addons"
+        class="addon"
+        [class.selected]="addon.selected"
+        (click)="toggleAddon(addon, $event)">
+
+        <input type="checkbox" [(ngModel)]="addon.selected" (click)="$event.stopPropagation()">
+        <div class="services">
+            <span class="addon-text">
+                {{ addon.name }}
+            </span>
+            <span class="addon-description">
+                {{ addon.description }}
+            </span>
+        </div>
+        <span class="addon-price">
+            {{ getAddonPrice(addon.price) }}
+        </span>
+    </div>
+</div>
+
+<div class="buttons">
+    <button class="back-button" (click)="prevStep()">Go Back</button>
+    <button class="next-button" (click)="nextStep()">Next Step</button>
+</div>

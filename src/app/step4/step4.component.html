@@ -1,0 +1,29 @@
+<div class="head">
+    <h2>Finishing up</h2>
+    <p>Double-check everything looks OK before confirming.</p>
+</div>
+<div class="summary" [ngClass]="{'has-addons': modalComponent.selectedAddons.length > 0}">
+    <div class="plan-details">
+        <div class="plan-summary">
+            <p>{{ modalComponent.selectedPlan }} ({{ modalComponent.isYearly ? 'Yearly' : 'Monthly'}})</p>
+            <button (click)="modalComponent.goToStep(1)">Change</button>
+        </div>
+        <p>${{ modalComponent.getPlanPrice() }}{{ getPlanBilling()}}</p>
+    </div>
+    <span *ngIf="modalComponent.selectedAddons.length > 0"></span>
+    <div class="addons-summary" *ngIf="modalComponent.selectedAddons.length > 0">
+        <div class="addons-info" *ngFor="let addon of modalComponent.selectedAddons">
+            <p>{{ addon.name }}</p>
+            <p>+${{ addon.price }}{{ getPlanBilling()}}</p>
+        </div>
+    </div>
+    <div class="total">
+        <p>Total ({{ modalComponent.isYearly ? 'Per Year' : 'per month'}})</p>
+        <p>${{ modalComponent.total }}{{ getPlanBilling()}}</p>
+    </div>
+</div>
+
+<div class="buttons">
+    <button class="back-button" (click)="prevStep()">Go Back</button>
+    <button class="confirm-button" (click)="confirm()">Confirm</button>
+</div>

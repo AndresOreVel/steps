@@ -1,0 +1,39 @@
+<div class="step-container">
+    <div class="head">
+        <h2>Personal info</h2>
+        <p>Please provide your name, email, address, and phone number.</p>
+    </div>
+    <form (ngSubmit)="nextStep()" class="info">
+    
+        <div class="input-group">
+            <div class="label-container">
+                <label for="name">Name</label>
+                <span class="error" *ngIf="userInfo.name && !isValidName()">Minimum 3 characters required</span>
+            </div>
+            <input type="text" id="name" [(ngModel)]="userInfo.name" name="name" placeholder="e.g.Stephen King"
+             (input)="updateFormStatus()" [class.invalid]="userInfo.name && !isValidName()">
+        </div>
+    
+        <div class="input-group">
+            <div class="label-container">
+                <label for="email">Email Address</label>
+                <span class="error" *ngIf="userInfo.email && !isValidEmail()">Invalid mail address</span>
+            </div>
+            <input type="email" id="email" [(ngModel)]="userInfo.email" name="email" placeholder="e.g.stephenking@lorem.com"
+                (input)="updateFormStatus()" [class.invalid]="userInfo.email && !isValidEmail()">
+        </div>
+    
+        <div class="input-group">
+            <div class="label-container">
+                <label for="phone">Phone Number</label>
+                <span class="error" *ngIf="userInfo.phone && !isValidPhone()">Minimum 8 characters</span>
+            </div>
+            <input type="tel" id="phone" [(ngModel)]="userInfo.phone" name="phone" placeholder="e.g. +1 234 567 890" 
+                (input)="updateFormStatus()" [class.invalid]="userInfo.phone.length > 0 && !isValidPhone()">
+        </div>
+
+        <div class="buttons">
+            <button [disabled]="!isStep1Valid" type="submit">Next Step</button>
+        </div>
+    </form>
+</div>

@@ -1,1 +1,40 @@
 /* You can add global styles to this file, and also import other style files */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Ubuntu';
+    src: url('assets/fonts/Ubuntu-Bold.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Medium';
+    src: url('assets/fonts/Ubuntu-Medium.ttf');
+}
+
+@font-face {
+    font-family: 'Regular';
+    src: url('assets/fonts/Ubuntu-Regular.ttf');
+}
+
+:root{
+
+    /*Primary*/
+    --Marine-blue: hsl(213, 96%, 18%); /*Headers*/
+    --Purplish-blue: hsl(243, 100%, 62%);
+    --Pastel-blue: hsl(228, 100%, 84%);
+    --Light-blue: hsl(206, 94%, 87%);
+    --Strawberry-red: hsl(354, 84%, 57%);
+    
+    /*Neutral*/
+    --Cool-gray: hsl(231, 11%, 63%); /*párrafos*/
+    --Light-gray: hsl(229, 24%, 87%);
+    --Magnolia: hsl(217, 100%, 97%);
+    --Alabaster: hsl(231, 100%, 99%);
+    --White: hsl(0, 0%, 100%);
+}

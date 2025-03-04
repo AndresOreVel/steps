@@ -1,0 +1,124 @@
+.step-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 605.2px;
+}
+
+.head{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+}
+
+p{
+    line-height: 1.5;
+    color: var(--Cool-gray);
+    font-family: 'Regular', sans-serif;
+}
+
+label{
+    color: var(--Marine-blue);
+}
+
+h2{
+    font-size: 2rem;
+    letter-spacing: 2px;
+    font-family: 'Medium', sans-serif;
+    color: var(--Marine-blue);
+    margin-bottom: 0.7rem;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    flex-grow: 1;
+}
+
+.input-group{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    position: relative;
+}
+
+.input-group input{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1rem;
+    color: var(--Marine-blue);
+    background-color: var(--Alabaster);
+}
+
+.label-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.error{
+    color: red;
+    font-size: 14px;
+    display: block;
+    margin-top: 3px;
+    min-height: 18px;
+}
+
+.input-group input{
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid var(--Light-gray);
+    transition: border-color 0.3s ease-in-out;
+}
+
+.input-group input:focus{
+    border: 1px solid var(--Purplish-blue);
+    outline: none;
+}
+
+.input-group input.invalid{
+    border: 1px solid red;
+}
+
+.buttons{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: auto;
+}
+
+
+button{
+    max-width: 120px;
+    padding: 17px 23px;
+    border: none;
+    color: var(--White);
+    background-color: var(--Marine-blue);
+    border-radius: 10px;
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+
+button:hover{
+    filter: brightness(1.5);
+}
+
+@media screen and (max-width: 800px) {
+
+    .info{
+        flex-grow: 0;
+    }
+
+    .step-container{
+        height: auto;
+    }
+
+    .buttons {
+        background-color: var(--White);
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 1rem 3.7rem;
+        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    }
+}
