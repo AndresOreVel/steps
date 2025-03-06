@@ -6,7 +6,7 @@
     },
     {
       "src": "/.*",
-      "dest": "dist/step/browser/index.html"
+      "dest": "/index.html"
     }
   ]
 }
