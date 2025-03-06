@@ -2,7 +2,7 @@
     <div class="modal-content">
         <div class="aside">
             <ul>
-                <li *ngFor="let step of steps; let i = index" [class.active]="i === currentStep" [class.disabled]="i !== 0 && !step1Completed" (click)="goToStep(i)" [attr.data-index]="i + 1" [routerLink]="step.name">
+                <li *ngFor="let step of steps; let i = index" [class.active]="i === currentStep" [class.disabled]="i !== 0 && !step1Completed" (click)="goToStep(i)" [attr.data-index]="i + 1">
                     <div class="steps">
                         <span class="step">Step {{ i + 1 }}</span>
                         <span >{{ step.name }}</span>

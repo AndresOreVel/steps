@@ -1,4 +1,5 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-modal',
@@ -10,10 +11,10 @@ export class ModalComponent implements OnInit{
   step1Completed = false;
 
   steps = [
-    { name: 'Your Info' },
-    { name: 'Select plan '},
-    { name: 'Add-ons '},
-    { name: 'Summary' }
+    { name: 'Your Info', route: 'step1' },
+    { name: 'Select Plan', route: 'step2' },
+    { name: 'Add-ons', route: 'step3' },
+    { name: 'Summary', route: 'step4' }
   ];
 
   selectedPlan = 'Arcade';
@@ -33,7 +34,9 @@ export class ModalComponent implements OnInit{
     { name: 'Customizable Profile ', description: 'Custom theme on your profile', price: 2, selected: false }
   ];
 
-  constructor(private cdRef: ChangeDetectorRef){}
+  constructor(private cdRef: ChangeDetectorRef,
+    private router: Router
+  ){}
 
   ngOnInit(): void {
     console.log('Steps:', this.steps);
@@ -64,6 +67,7 @@ export class ModalComponent implements OnInit{
   goToStep(stepIndex: number){
     console.log('Intentando ir al step:', stepIndex);
     if(stepIndex === 0 || this.step1Completed){
+      this.router.navigate([`/start/${this.steps[stepIndex].route}`]);
       this.currentStep = stepIndex;
       this.updateAddons();
       this.calculateTotal();
