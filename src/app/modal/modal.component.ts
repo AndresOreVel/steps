@@ -36,6 +36,8 @@ export class ModalComponent implements OnInit{
   constructor(private cdRef: ChangeDetectorRef){}
 
   ngOnInit(): void {
+    console.log('Steps:', this.steps);
+    console.log('Current Step:', this.currentStep);
     this.updateAddons();
     this.calculateTotal();
   }
@@ -60,6 +62,7 @@ export class ModalComponent implements OnInit{
   }
 
   goToStep(stepIndex: number){
+    console.log('Intentando ir al step:', stepIndex);
     if(stepIndex === 0 || this.step1Completed){
       this.currentStep = stepIndex;
       this.updateAddons();

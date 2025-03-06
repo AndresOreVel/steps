@@ -8,7 +8,7 @@ import { Step4Component } from './step4/step4.component';
 import { ThanyouComponent } from './thanyou/thanyou.component';
 
 const routes: Routes = [
-  { path: '', component: ModalComponent},
+  { path: 'start', component: ModalComponent},
   { path: 'step1', component: Step1Component},
   { path: 'step2', component: Step2Component},
   { path: 'step3', component: Step3Component},
