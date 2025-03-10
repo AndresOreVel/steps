@@ -42,6 +42,14 @@ export class AppComponent implements OnInit {
     this.menu = this.navigationService.getMenu();
     this.updateAddons();
     this.calculateTotal();
+
+    this.router.events.subscribe(() => {
+      const currentUrl = this.router.url;
+      const foundIndex = this.menu.items.findIndex(item => item.route === currentUrl);
+      if(foundIndex !== -1){
+        this.currentStep = foundIndex;
+      }
+    });
   }
 
   markStep1Completed(isValid: boolean) {
