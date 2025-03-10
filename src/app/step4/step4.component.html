@@ -2,24 +2,24 @@
     <h2>Finishing up</h2>
     <p>Double-check everything looks OK before confirming.</p>
 </div>
-<div class="summary" [ngClass]="{'has-addons': modalComponent.selectedAddons.length > 0}">
+<div class="summary" [ngClass]="{'has-addons': appComponent.selectedAddons.length > 0}">
     <div class="plan-details">
         <div class="plan-summary">
-            <p>{{ modalComponent.selectedPlan }} ({{ modalComponent.isYearly ? 'Yearly' : 'Monthly'}})</p>
-            <button (click)="modalComponent.goToStep(1)">Change</button>
+            <p>{{ appComponent.selectedPlan }} ({{ appComponent.isYearly ? 'Yearly' : 'Monthly'}})</p>
+            <button (click)="appComponent.goToStep(1)">Change</button>
         </div>
-        <p>${{ modalComponent.getPlanPrice() }}{{ getPlanBilling()}}</p>
+        <p>${{ appComponent.getPlanPrice() }}{{ getPlanBilling()}}</p>
     </div>
-    <span *ngIf="modalComponent.selectedAddons.length > 0"></span>
-    <div class="addons-summary" *ngIf="modalComponent.selectedAddons.length > 0">
-        <div class="addons-info" *ngFor="let addon of modalComponent.selectedAddons">
+    <span *ngIf="appComponent.selectedAddons.length > 0"></span>
+    <div class="addons-summary" *ngIf="appComponent.selectedAddons.length > 0">
+        <div class="addons-info" *ngFor="let addon of appComponent.selectedAddons">
             <p>{{ addon.name }}</p>
             <p>+${{ addon.price }}{{ getPlanBilling()}}</p>
         </div>
     </div>
     <div class="total">
-        <p>Total ({{ modalComponent.isYearly ? 'Per Year' : 'per month'}})</p>
-        <p>${{ modalComponent.total }}{{ getPlanBilling()}}</p>
+        <p>Total ({{ appComponent.isYearly ? 'Per Year' : 'per month'}})</p>
+        <p>${{ appComponent.total }}{{ getPlanBilling()}}</p>
     </div>
 </div>
 

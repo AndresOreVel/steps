@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ModalComponent } from '../modal/modal.component';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-step3',
@@ -8,10 +8,12 @@ import { ModalComponent } from '../modal/modal.component';
 })
 export class Step3Component {
 
-  constructor(protected modalComponent: ModalComponent){}
+  constructor(
+    protected appComponent: AppComponent
+  ){}
 
   getAddonPrice(price: number): string{
-    return this.modalComponent.isYearly ? `+$${price * 10}/yr` : `+$${price}/mo`;
+    return this.appComponent.isYearly ? `+$${price * 10}/yr` : `+$${price}/mo`;
   }
 
   toggleAddon(addon: any, event: MouseEvent){
@@ -21,11 +23,11 @@ export class Step3Component {
   }
 
   nextStep(){
-    this.modalComponent.updateAddons();
-    this.modalComponent.nextStep();
+    this.appComponent.updateAddons();
+    this.appComponent.nextStep();
   }
 
   prevStep(){
-    this.modalComponent.prevStep();
+    this.appComponent.prevStep();
   }
 }

@@ -3,7 +3,7 @@
     <p>Add-ons help to enhance your gaming experience.</p>
 </div>
 <div class="addons-selection">
-    <div *ngFor="let addon of modalComponent.addons"
+    <div *ngFor="let addon of appComponent.addons"
         class="addon"
         [class.selected]="addon.selected"
         (click)="toggleAddon(addon, $event)">

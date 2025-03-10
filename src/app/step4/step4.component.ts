@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { ModalComponent } from '../modal/modal.component';
+import { AppComponent } from '../app.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-step4',
@@ -7,17 +8,20 @@ import { ModalComponent } from '../modal/modal.component';
   styleUrl: './step4.component.css'
 })
 export class Step4Component {
-  constructor(protected modalComponent: ModalComponent){}
+  constructor(
+    protected appComponent: AppComponent,
+    private router: Router
+  ){}
   
   prevStep(){
-    this.modalComponent.prevStep();
+    this.appComponent.prevStep();
   }
 
   getPlanBilling(): string{
-    return this.modalComponent.isYearly ? '/yr' : '/mo';
+    return this.appComponent.isYearly ? '/yr' : '/mo';
   }
 
   confirm(){
-    this.modalComponent.nextStep();
+    this.router.navigate(['/thankyou']);
   }
 }

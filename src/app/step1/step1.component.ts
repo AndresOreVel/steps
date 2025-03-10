@@ -1,6 +1,5 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
-import { ModalComponent } from '../modal/modal.component';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-step1',
@@ -17,7 +16,7 @@ export class Step1Component implements OnInit{
   isStep1Valid = false;
 
   constructor(
-    private modalComponent: ModalComponent,
+    private appComponent: AppComponent,
     private cdRef: ChangeDetectorRef
   ){}
 
@@ -47,7 +46,7 @@ export class Step1Component implements OnInit{
 
   updateFormStatus():void {
     this.isStep1Valid = this.isFormValid();
-    this.modalComponent.markStep1Completed(this.isFormValid());
+    this.appComponent.markStep1Completed(this.isFormValid());
 
     this.cdRef.detectChanges();
   }
@@ -58,7 +57,7 @@ export class Step1Component implements OnInit{
       localStorage.setItem('email', this.userInfo.email);
       localStorage.setItem('phone', this.userInfo.phone);
       
-      this.modalComponent.nextStep();
+      this.appComponent.nextStep();
     }
   }
 }

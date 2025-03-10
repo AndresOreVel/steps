@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ModalComponent } from '../modal/modal.component';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-step2',
@@ -8,21 +8,23 @@ import { ModalComponent } from '../modal/modal.component';
 })
 export class Step2Component {
 
-  constructor(protected modalComponent: ModalComponent){}
+  constructor(
+    protected appComponent: AppComponent,
+  ){}
 
   updatePrice(){
-    if(this.modalComponent.isYearly){
-      this.modalComponent.plans.forEach(plan => plan.price = plan.price * 10);
+    if(this.appComponent.isYearly){
+      this.appComponent.plans.forEach(plan => plan.price = plan.price * 10);
     }else{
-      this.modalComponent.plans.forEach(plan => plan.price = plan.price / 10);
+      this.appComponent.plans.forEach(plan => plan.price = plan.price / 10);
     }
   }
 
   nextStep(){
-    this.modalComponent.nextStep();
+    this.appComponent.nextStep();
   }
 
   prevStep(){
-    this.modalComponent.prevStep();
+    this.appComponent.prevStep();
   }
 }

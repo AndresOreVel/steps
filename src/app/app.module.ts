@@ -1,10 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ModalComponent } from './modal/modal.component';
 import { Step1Component } from './step1/step1.component';
 import { Step2Component } from './step2/step2.component';
 import { Step3Component } from './step3/step3.component';
@@ -14,7 +12,6 @@ import { ThanyouComponent } from './thanyou/thanyou.component';
 @NgModule({
   declarations: [
     AppComponent,
-    ModalComponent,
     Step1Component,
     Step2Component,
     Step3Component,
