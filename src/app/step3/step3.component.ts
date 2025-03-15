@@ -20,7 +20,6 @@ export class Step3Component {
     if(!(event.target instanceof HTMLInputElement)){
       addon.selected = !addon.selected;
     }
-    this.appComponent.updateAddons();
   }
 
   nextStep(){
