@@ -18,6 +18,7 @@ export class Step4Component {
   }
 
   getPlanBilling(): string{
+    this.appComponent.updateAddons();
     return this.appComponent.isYearly ? '/yr' : '/mo';
   }
 
