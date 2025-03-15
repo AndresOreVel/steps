@@ -8,7 +8,7 @@
         [class.selected]="addon.selected"
         (click)="toggleAddon(addon, $event)">
 
-        <input type="checkbox" [(ngModel)]="addon.selected" (click)="$event.stopPropagation()">
+        <input type="checkbox" [(ngModel)]="addon.selected" (ngModelChange)="appComponent.updateAddons()" (click)="$event.stopPropagation()">
         <div class="services">
             <span class="addon-text">
                 {{ addon.name }}
