@@ -1,27 +1,25 @@
-# Step
+# MultiSteps
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.9.
+Este es un proyecto que implementa un flujo de formulario dividido en 4 pasos, diseñado para guiar al usuario de manera sencilla y validada hasta la confirmación final. 
 
-## Development server
+## 1. Información personal
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Nombre, email y número de teléfono.
+Cada campo cuenta con validación estricta. Si algún dato no es válido, no es posible avanzar al siguiente.
 
-## Code scaffolding
+## 2. Selección de plan
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+El segundo paso ofrece tres planes de pago: arcade, advance y pro.
+Además, el usuario puede elegir entre facturación mensual o anual, actualizando los precios dinámicamente.
 
-## Build
+## 3. Complementos (Add-ons)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+El tercer paso permite añadir uno o varios complementos opcionales:
+servicio online, mayor almacenamiento y perfil personalizado.
+Cada complemento incluye su propio precio, que se suma al total del resumen.
 
-## Running unit tests
+## 4. Resumen y confirmación
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+En el último paso se muestra un resumen completo de la selección del usuario, calculando el precio final.
+Al hacer clic sobre el botón de finalizar, aparece un mensaje de agradecimiento
+confirmando el proceso
